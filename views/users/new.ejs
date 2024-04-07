@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="/login_styles.css" />
+  </head>
+  <body>
+    <section class="signup_view view">
+      <form action="/users" method="POST" class="signup_form form">
+        <h1 class="signup_header form_header">Sign up</h1>
+        <section class="credentials">
+          <section class="user_section lab_inp_marg">
+            <label for="user" class="user_label">Email</label>
+            <input
+              type="text"
+              name="newName"
+              class="signup_user_input user_input"
+              value="<%= locals.newName %>"
+              required
+            />
+          </section>
+
+          <section class="pass_section lab_inp_marg">
+            <label for="password" class="pass_label">Password</label>
+            <input
+              type="password"
+              class="signup_pass_input pass_input"
+              name="newPass"
+              value="<%= locals.newPass %>"
+              required
+            />
+          </section>
+
+          <section class="pass_section lab_inp_marg">
+            <label for="password" class="pass_label">Confirm Password</label>
+            <input
+              type="password"
+              class="signup_conf_pass_input pass_input"
+              name="confirmPass"
+              value="<%= locals.confirmPass %>"
+              required
+            />
+          </section>
+          <button class="signup_btn action_btn">Sign up</button>
+        </section>
+      </form>
+
+
+      <section class="signup_section">
+        <h4 class="signup_header margin">Do you have an account?</h4>
+        <a href="login">
+          <button class="login_nav switch_action padding">Log in</button>
+        </a>
+      </section>
+    </section>
+  </body>
+</html>

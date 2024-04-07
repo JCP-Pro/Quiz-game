@@ -1,0 +1,17 @@
+{
+  "name": "question_game",
+  "version": "1.0.0",
+  "description": "Question and Answer game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
+  },
+  "author": "Juan",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}

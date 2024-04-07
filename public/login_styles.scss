@@ -1,0 +1,142 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+$body_background: gainsboro;
+// $form_background: rgb(217, 151, 75);
+$form_background: white;
+$font_size: 20px;
+$icon_width: 30px;
+$icon_height: 30px;
+
+
+body {
+    background: $body_background;
+}
+
+.link {
+    padding: 1em;
+    color: black;
+    text-decoration: none;
+    margin: 1em;
+    display: inline-block;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.form_header {
+    border-bottom: 1px solid black;
+    padding-bottom: 1em;
+    margin-bottom: 0em !important;
+    overflow: auto;
+}
+
+.change_pass_header {
+    white-space: nowrap;
+    // width: fit-content;
+}
+
+.view {
+    background: $form_background;
+    text-align: center;
+    width: 50%;
+    height: fit-content;
+    margin: 2em auto;
+    box-shadow: 0 0 10px black;
+    padding: 2rem;
+
+    & > * {
+        margin: 2rem;
+        font-size: $font_size;
+
+    }
+}
+
+.credentials {
+    margin-top: .5rem !important;
+    display: flex;
+    flex-flow: column;
+    border-bottom: 1px solid black;
+    padding-bottom: 2rem;
+
+    & > * {
+        margin: 1em;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+    }
+}
+
+.lab_inp_marg > * {
+    margin: .5rem;
+    font-size: $font_size;
+}
+
+.action_btn {
+    margin: 2em auto;
+    padding: .5em 3em;
+    cursor: pointer;
+    font-size: $font_size;
+}
+
+.margin { 
+    margin-bottom: 1em;
+}
+
+.padding {
+    padding: .5rem 2em;
+}
+
+.switch_action {
+    cursor: pointer;
+    font-size: $font_size;
+}
+
+.hide {
+    display: none !important;
+}
+
+.icon {
+    cursor: pointer;
+    margin-right: 1rem;
+    float:left;
+    width: $icon_width;
+    height: $icon_height;
+
+    &:active {
+        opacity: .6;
+    }
+}
+
+.error_icon {
+    cursor: default;
+}
+
+.error_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.forgot_pass_section {
+    border-bottom: 1px solid black;
+    padding-bottom: 2rem;
+    margin-bottom: 0em;
+}
+
+.signup_section {
+    margin-top: 2rem;
+}
+
+.change_btn {
+    margin-top: 2em;
+}

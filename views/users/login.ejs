@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link rel="stylesheet" href="/login_styles.css" />
+  </head>
+  <body>
+    <div class="guest_section">
+      <a href="guest" class="guest link">Play as a guest</a>
+    </div>
+
+    <section class="login_view view">
+      <form class="login_form" method="post" action="/users">
+        <h1 class="login_header form_header">Log in</h1>
+        <section class="credentials">
+          <section class="user_section lab_inp_marg">
+            <label for="user" class="user_label">Email</label>
+            <input type="text" class="login_user_input user_input" required />
+          </section>
+
+          <section class="pass_section lab_inp_marg">
+            <label for="password" class="pass_label">Password</label>
+            <input
+              type="password"
+              class="login_password_input pass_input"
+              required
+            />
+          </section>
+          <section class="error_section hide" id="login_verification_error_msg">
+            <img
+              src="/res/media/exclamation-mark.png"
+              alt="error icon"
+              class="error_icon icon"
+            />
+            <p class="empty_field_error clearfix hide">
+              Please fill in the field!
+            </p>
+            <p class="mismatch clearfix hide">Incorrect credentials!</p>
+          </section>
+          <button
+            class="login_btn action_btn"
+            id="login_verification_error_msg"
+          >
+            Log in
+          </button>
+        </section>
+      </form>
+
+      <section class="forgot_pass_section">
+        <h4 class="forgot_pass_header margin">Forgot your password?</h4>
+        <a href="forgot_password">
+          <button class="switch_action change_pass padding">
+            Change password
+          </button>
+        </a>
+      </section>
+
+      <section class="signup_section">
+        <h4 class="signup_header margin">Don't have an account?</h4>
+        <a href="new">
+          <button class="switch_action signup_nav padding">Sign up</button>
+        </a>
+      </section>
+    </section>
+  </body>
+</html>
