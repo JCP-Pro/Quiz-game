@@ -2,10 +2,15 @@ var objList = []
 var answers = []
 var question = ""
 var correctAnswers = []
+var playerId = 1
+const loginSection = document.querySelector(".login_section")
+const logoutOption = document.querySelector(".drop_down_container")
+const loginLink = document.querySelector(".login_link")
+const logoutLink = document.querySelector(".log_out")
 const formView = document.querySelector(".form_container")
 const lobbyView = document.querySelector(".lobby_container")
 const cAInp = document.querySelector(".c_a_inp")
-const list_container = document.querySelector(".a_container")
+const listContainer = document.querySelector(".a_container")
 const qInp = document.querySelector(".q_inp")
 const aInp = document.querySelector(".a_inp")
 const btnAdd = document.querySelector(".add")
@@ -26,6 +31,48 @@ var totalQCount = 0
 var qFinished = 0
 gameTracker.innerHTML = `Questions: ${totalQCount}`
 score.innerHTML = `Score: ${playerPoints}`
+
+if(loginLink.textContent !== "undefined" && loginLink.textContent !== "Log in") {
+    loginSection.addEventListener("mouseenter", () => {
+        displayLogout()
+    })
+    loginSection.addEventListener("mouseleave", () => {
+        displayLogout()
+
+    })
+    
+} else console.log("no user logged in")
+
+function displayLogout() {
+    logoutOption.classList.toggle("hide")
+    loginLink.classList.toggle("white_text")
+    logoutLink.classList.toggle("white_text")
+}
+
+//lobby
+const lobby = document.querySelector(".lobby") //use to append the list of player
+const you = document.querySelector(".log_link").textContent
+if (you !== "undefined" && you !== "Log in") {
+    createLobby(you)
+}
+
+function createLobby (player) {
+    let ol = document.createElement("ol")
+    ol.classList.add("player_list")
+    lobby.append(ol)
+    addPlayerToLobbyList(ol, player)
+}
+
+function addPlayerToLobbyList(listOfPlayers, player) {
+    let li = document.createElement("li")
+    li.classList.add("li")
+    li.classList.add("player")
+    li.id = playerId
+    li.innerText = player
+    listOfPlayers.append(li)
+
+    playerId++
+}
 
 btnAdd.addEventListener('click', getInpValue)
 qInp.addEventListener('keyup', (e) => {

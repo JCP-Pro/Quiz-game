@@ -1,0 +1,34 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.status_error_header, .status {
+    margin: 1em;
+}
+
+.ul {
+    list-style: none;
+    width: fit-content;
+    margin: auto;
+    padding: 1em;
+    background-color: gainsboro;
+}
+
+.li {
+    margin: 2em;
+}
+
+.link {
+    padding: 1em 2em;
+    text-decoration: none;
+    color: blue;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

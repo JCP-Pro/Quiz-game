@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/status_error.css">
+    <title>Status error</title>
+</head>
+<body>
+    <h1 class="status_error_header">Something went wrong!</h1>
+    <p class="status">Status: <%= locals.status %></p>
+    <ul class="nav_list ul">
+        <p>Go back to: </p>
+        <li class="li"><a href="/" class="link">Main menu</a></li>
+        <li class="li"><a href="/auth/login" class="link">Login</a></li>
+        <li class="li"><a href="/auth/register" class="link">Signup</a></li>
+    </ul>
+</body>
+</html>

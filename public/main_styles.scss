@@ -43,20 +43,73 @@ body {
     opacity: 1;
 }
 
-.login_section {
-    // background-color: red;
-    margin: 1rem;
-    float: left;
+.white_text {
+    color: white !important;
 }
 
-.login_link {
+.hover_btn {
+    color: $font_color;
+    cursor: pointer;
+    margin: 0 1rem;
+    border-radius: 10px;
+    border: none;
+    background: none;
+    transition: 250ms;
+
+    &:hover {
+        background: $button_background;
+        box-shadow: 0 0 5px black;
+
+    }
+}
+
+//lobby 
+.player_list {
+    margin: 1em;
+
+    & > * {
+        margin: 1em;
+    }
+}
+
+.guest {
+    color: black;
+    cursor: default;
+}
+
+.login_section {
+    // background-color: red;
+    color:white;
+    margin: 1rem;
+    margin-top: 0;
     padding: 1em;
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    &:hover { 
+        // background: $hover_background;
+        color: white;
+    }
+}
+
+.log_link {
+    padding: 1em 2em;
     color: black;
     text-decoration: none;
 
     &:hover {
         text-decoration: underline;
+        // background: $hover_background;
+        color: white;
     }
+}
+
+.drop_down_container {
+    margin: 1em;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 1em;
+    padding-left: 0;
 }
 
 .intro_container {

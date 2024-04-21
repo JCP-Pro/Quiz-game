@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello world!</h1> <%= text %>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Question game</title>
+    <link rel="stylesheet" href="/main_styles.css" />
+  </head>
+  <body>
+    <!-- User -->
+    <section class="login_section transition hover_btn">
+      <a class="login_link transition log_link" href="/users/<%= locals.username %>/profile"><%= locals.username %></a>
+      <section class="drop_down_container transition hide">
+        <a href="/" class="log_out log_link transition">Log out</a>
+      </section>
+    </section>
+
+    <!-- End dialog -->
+    <dialog class="end_dialog">
+      <img src="/res/media/close.png" alt="close dialog" class="close" />
+      <div class="dialog_container">
+        <h3 class="end_title">Game over</h3>
+        <p class="end_message"></p>
+        <button class="btn reset">Play again!</button>
+      </div>
+    </dialog>
+
+    <div class="game_tracker_container">
+      <b class="total_q"></b>
+      <b class="points"></b>
+    </div>
+
+    <div class="intro_container">
+      <h1 class="intro_title">Q & A</h1>
+      <p class="intro_p">1 question and 4 answers.</p>
+    </div>
+
+    <div class="side_container transition">
+      <h4 class="side_container_title">Q & A List</h4>
+    </div>
+
+    <!-- Player lobby -->
+    <section class="lobby_container container transition">
+      <section class="lobby">
+        <h3 class="lobby_header">Lobby</h3>
+      </section>
+    </section>
+
+    <div class="form_container transition" id="top_page">
+      <form class="form">
+        <label for="q" class="q_label label">Question</label>
+        <input type="text" name="q" class="q_inp" />
+        <label for="a" class="a_label label">Answer</label>
+        <input type="text" name="a" class="a_inp" />
+        <label for="c_a" class="c_a_label label">Correct answer(s)</label>
+        <input type="text" name="c_a" class="c_a_inp" />
+      </form>
+      <div class="btn_container">
+        <button class="btn add">Add</button>
+        <button class="btn create">Create</button>
+        <button class="btn reset">Reset</button>
+      </div>
+    </div>
+
+    <div class="q_a_container"></div>
+  </body>
+  <script src="/main_script.js"></script>
 </html>

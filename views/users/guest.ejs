@@ -8,8 +8,11 @@
   </head>
   <body>
     <!-- Login -->
-    <section class="login_section">
-      <a class="login_link" href="/users/login">Log in</a>
+    <section class="login_section transition hover_btn">
+      <p class="guest transition"><%= locals.guestUser %></p>
+      <section class="drop_down_container transition hide">
+        <a class="login_link log_link" href="/auth/login">Log in</a>
+      </section>
     </section>
 
     <!-- End dialog -->
@@ -63,4 +66,5 @@
     <div class="q_a_container"></div>
   </body>
   <script src="/main_script.js"></script>
+  <script src="/guest.js"></script>
 </html>
