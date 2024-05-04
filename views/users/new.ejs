@@ -8,16 +8,34 @@
   </head>
   <body>
     <section class="signup_view view">
-      <form action="/users" method="POST" class="signup_form form">
+      <form action="/auth/register" method="POST" class="signup_form form">
         <h1 class="signup_header form_header">Sign up</h1>
         <section class="credentials">
           <section class="user_section lab_inp_marg">
-            <label for="user" class="user_label">Email</label>
+            <label for="newName" class="user_label">Username</label>
             <input
               type="text"
-              name="newName"
+              name="username"
               class="signup_user_input user_input"
-              value="<%= locals.newName %>"
+              value="<%= locals.username %>"
+              required
+            />
+
+            <% if (locals.status == 400) { %>
+            <section class="error_section">
+              <img src="/res/media/exclamation-mark.png" alt="error icon" class="error_icon">
+              <p class="error_message">Username taken. Please try again.</p>
+            </section>
+            <% } %>
+          </section>
+
+          <section class="user_section email_section lab_inp_marg">
+            <label for="newEmail" class="user_label">Email</label>
+            <input
+              type="text"
+              name="email"
+              class="signup_user_input user_input"
+              value="<%= locals.email %>"
               required
             />
           </section>
@@ -27,8 +45,7 @@
             <input
               type="password"
               class="signup_pass_input pass_input"
-              name="newPass"
-              value="<%= locals.newPass %>"
+              name="password"
               required
             />
           </section>
@@ -39,14 +56,12 @@
               type="password"
               class="signup_conf_pass_input pass_input"
               name="confirmPass"
-              value="<%= locals.confirmPass %>"
               required
             />
           </section>
           <button class="signup_btn action_btn">Sign up</button>
         </section>
       </form>
-
 
       <section class="signup_section">
         <h4 class="signup_header margin">Do you have an account?</h4>

@@ -101,6 +101,9 @@ body {
 
 .error_icon {
   cursor: default;
+  width: 30px;
+  height: 30px;
+  margin-right: 1em;
 }
 
 .error_section {

@@ -1,0 +1,165 @@
+.tac {
+  text-align: center;
+}
+
+.user_profile {
+  cursor: default;
+  color: black;
+  margin: 0 2em;
+}
+
+.profile_header {
+  margin: 1em;
+  text-align: center;
+}
+
+.profile_container {
+  color: white;
+}
+
+.ul {
+  list-style: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 1em;
+  background: rgb(63, 90, 95);
+}
+
+.user_div {
+  border-bottom: 1px solid black;
+}
+
+.username_li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-bottom: 0 !important;
+}
+.username_li > * {
+  margin: 1em;
+  margin-bottom: 0;
+}
+
+.margin {
+  margin: 1rem;
+}
+
+.status_label {
+  margin-top: 0;
+}
+
+.status {
+  font-size: 1rem;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  resize: none;
+  border: none;
+  background: gainsboro;
+  border-radius: 10px;
+  padding: 0.5em;
+  /* Handle */
+  /* Handle on hover */
+}
+.status:focus-visible {
+  outline: none;
+}
+.status::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.status::-webkit-scrollbar-track {
+  border-radius: 10px;
+  margin: 2em;
+}
+.status::-webkit-scrollbar-thumb {
+  background: #003655;
+  border-radius: 10px;
+}
+.status::-webkit-scrollbar-thumb:hover {
+  background: #004d6b;
+}
+
+.profile_pic {
+  max-width: 300px;
+  max-height: 300px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  cursor: pointer;
+}
+.profile_pic:hover {
+  opacity: 0.5;
+}
+
+.li {
+  margin: 1em;
+}
+
+.play_div {
+  text-align: center;
+}
+
+.button_style {
+  cursor: pointer;
+  margin: 1em;
+  padding: 1em 2em;
+  text-align: center;
+  background: rgb(63, 90, 95);
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+.button_style:hover {
+  opacity: 0.5;
+}
+
+.dialog {
+  padding: 1em;
+  margin: auto;
+}
+.dialog > * {
+  margin: 1em;
+}
+
+.flex_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex_div > * {
+  margin: 1em;
+}
+
+.img_btn {
+  background: gainsboro;
+  color: black;
+}
+
+.close {
+  width: 1rem;
+  height: 1rem;
+  float: right;
+  margin: 1rem;
+  cursor: pointer;
+}
+.close:hover {
+  opacity: 0.5;
+}
+
+.btn_div {
+  width: 80%;
+  margin: auto;
+}
+
+.change_img_btn {
+  text-align: center;
+  color: black;
+  margin: auto;
+  width: 100%;
+  background: gainsboro;
+}
+.change_img_btn:hover {
+  color: white;
+}/*# sourceMappingURL=profile.css.map */

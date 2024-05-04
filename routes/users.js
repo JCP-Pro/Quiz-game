@@ -1,34 +1,31 @@
 const express = require("express")
+const User = require("../model/model_user")
+const UserController = require("../controller/UserController")
 const router = express.Router()
-
-const users = []
-
-const user = {
-    userName: ""
-}
-
-router.get('/', (req, res) => {
+/* router.get('/', (req, res) => {
     res.send('User List')
-})
+}) */
 
-router.get('/login', (req, res) => {
+/* router.get('/login', (req, res) => {
     res.render("users/login")
-})
+}) */
 
 router.get('/forgot_password', (req,res) => {
     res.render("users/forgot_password")
 })
 
 router.get('/guest', (req,res) => {
-    res.render("users/guest")
+    let guestId = Math.floor(Math.random() * 100000)
+    let guest = `Guest#${guestId}`
+    res.render("users/guest", { guestUser: guest })
 })
 
 
-router.get('/new', (req, res) => {
+/* router.get('/new', (req, res) => {
     res.render("users/new")
-})
+}) */
 
-router.post('/', (req, res) => {
+/* router.post('/', (req, res) => {
     //express doesn't allow you to access the body so you need a middleware, statement on server.js
     const isValid = true
     if(isValid) {
@@ -39,12 +36,19 @@ router.post('/', (req, res) => {
         res.render('users/new', {newName: req.body.newName}, console.log(users))
     }
     req.body.newName
-})
+}) */
 
 //dynamic parameter for users, static routes should go above dynamics.
-router.get('/:id', (req, res) => {
-    res.send(`Get User with ID ${req.params.id}`)
-    console.log(`You are inside /:id \n the users are ${users}`)
+router.get('/:id', async (req, res) => {
+    let user = req.params.id
+    let userDb = await User.findOne({ username: user }).exec()
+    res.render("index.ejs", { username : `${req.params.id}`, img: userDb.img})
+
 })
+
+router.get('/:id/profile', UserController.fetchUserData)
+
+//saving profile img to db
+router.post('/:id/profile', UserController.saveUserData)
 
 module.exports = router

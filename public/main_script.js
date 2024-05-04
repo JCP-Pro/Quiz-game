@@ -2,10 +2,15 @@ var objList = []
 var answers = []
 var question = ""
 var correctAnswers = []
+var playerId = 1
+const loginSection = document.querySelector(".login_section")
+const logoutOption = document.querySelector(".drop_down_container")
+const loginLink = document.querySelector(".login_link")
+const logoutLink = document.querySelector(".log_out")
 const formView = document.querySelector(".form_container")
 const lobbyView = document.querySelector(".lobby_container")
 const cAInp = document.querySelector(".c_a_inp")
-const list_container = document.querySelector(".a_container")
+const listContainer = document.querySelector(".a_container")
 const qInp = document.querySelector(".q_inp")
 const aInp = document.querySelector(".a_inp")
 const btnAdd = document.querySelector(".add")
@@ -18,6 +23,7 @@ const score = document.querySelector(".points")
 const endMessage = document.querySelector(".end_message")
 const endDialog = document.querySelector(".end_dialog")
 const closeDialog = document.querySelector(".close")
+const playerImg = document.querySelector(".player_img")
 var clickCount = 0
 var currentQCount = 1
 var playerPoints = 0
@@ -26,6 +32,68 @@ var totalQCount = 0
 var qFinished = 0
 gameTracker.innerHTML = `Questions: ${totalQCount}`
 score.innerHTML = `Score: ${playerPoints}`
+
+if(loginLink.textContent !== "undefined" && loginLink.textContent !== "Log in") {
+    loginSection.addEventListener("mouseenter", () => {
+        displayLogout()
+    })
+    loginSection.addEventListener("mouseleave", () => {
+        displayLogout()
+
+    })
+    
+} else console.log("no user logged in")
+
+function displayLogout() {
+    logoutOption.classList.toggle("hide")
+    loginLink.classList.toggle("white_text")
+    logoutLink.classList.toggle("white_text")
+}
+
+//lobby
+const lobby = document.querySelector(".lobby") //use to append the list of player
+const you = document.querySelector(".log_link").textContent
+if (you !== "undefined" && you !== "Log in") {
+    createLobby(you)
+}
+
+function createLobby (player) {
+    let ol = document.createElement("ol")
+    ol.classList.add("player_list")
+    lobby.append(ol)
+    addPlayerToLobbyList(ol, player)
+}
+
+function addPlayerToLobbyList(listOfPlayers, player) {
+    let li = document.createElement("li")
+    li.classList.add("li", "li_player")
+    li.id = playerId
+
+    let p = document.createElement("p")
+    p.classList.add("margin", "player")
+    p.innerText = player
+
+    let img = document.createElement("img")
+    img.src = playerImg.src
+    img.classList.add("player_img")
+    
+    let flexDiv = document.createElement("div")
+    flexDiv.classList.add("flex")
+
+    let roleIcon = document.createElement("img")
+    roleIcon.classList.add("role_icon", "icon")
+    listOfPlayers.append(li)
+    li.append(flexDiv)
+    flexDiv.append(img, p)
+    if(playerId == 1) {
+        roleIcon.src = "/res/media/crown.png"
+    } else {
+        roleIcon.src = "/res/media/player_lobby.png"
+    }
+    flexDiv.append(roleIcon)
+    playerId++
+    
+}
 
 btnAdd.addEventListener('click', getInpValue)
 qInp.addEventListener('keyup', (e) => {
@@ -219,8 +287,6 @@ function displayQA() {
     removeTrackList(trackListArr)
 
     for (let i=0;i<objList.length;i++) {
-        //TODO: display one question at a time instead of a list.
-
         let div = document.createElement("div")
         div.classList.add("divider") //to select all for reset
         div.classList.add("transition")
