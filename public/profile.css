@@ -32,16 +32,23 @@
 
 .username_li {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  margin-bottom: 0 !important;
 }
 .username_li > * {
   margin: 1em;
+  margin-bottom: 0;
 }
 
 .margin {
   margin: 1rem;
+}
+
+.status_label {
+  margin-top: 0;
 }
 
 .status {
@@ -76,8 +83,8 @@
 }
 
 .profile_pic {
-  width: 100px;
-  height: 100px;
+  max-width: 300px;
+  max-height: 300px;
   -o-object-fit: contain;
      object-fit: contain;
   cursor: pointer;
@@ -136,6 +143,9 @@
   float: right;
   margin: 1rem;
   cursor: pointer;
+}
+.close:hover {
+  opacity: 0.5;
 }
 
 .btn_div {

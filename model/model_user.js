@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
     createdAt: { type: Date }, //Use const date = new Date() to get the date
     updatedAt: { type: Date },
     //profile and stats
+    profileStatus: { type: String },
     img: { type: String },
     wins: { type: Number},
     losses: { type: Number},

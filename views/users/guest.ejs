@@ -9,7 +9,10 @@
   <body>
     <!-- Login -->
     <section class="login_section transition hover_btn">
-      <p class="guest transition"><%= locals.guestUser %></p>
+      <div class="flex">
+        <img src="/res/media/default_profile_pic.png" class="player_img" alt="player icon">
+        <p class="guest transition"><%= locals.guestUser %></p>
+      </div>
       <section class="drop_down_container transition hide">
         <a class="login_link log_link" href="/auth/login">Log in</a>
       </section>

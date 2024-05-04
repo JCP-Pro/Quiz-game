@@ -1,6 +1,7 @@
 const express = require("express")
+const User = require("../model/model_user")
+const UserController = require("../controller/UserController")
 const router = express.Router()
-
 /* router.get('/', (req, res) => {
     res.send('User List')
 }) */
@@ -38,13 +39,16 @@ router.get('/guest', (req,res) => {
 }) */
 
 //dynamic parameter for users, static routes should go above dynamics.
-router.get('/:id', (req, res) => {
-    res.render("index.ejs", { username : `${req.params.id}`})
+router.get('/:id', async (req, res) => {
+    let user = req.params.id
+    let userDb = await User.findOne({ username: user }).exec()
+    res.render("index.ejs", { username : `${req.params.id}`, img: userDb.img})
 
 })
 
-router.get('/:id/profile', (req, res) => {
-    res.render("users/profile", { username : `${req.params.id}`})
-})
+router.get('/:id/profile', UserController.fetchUserData)
+
+//saving profile img to db
+router.post('/:id/profile', UserController.saveUserData)
 
 module.exports = router

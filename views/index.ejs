@@ -9,7 +9,10 @@
   <body>
     <!-- User -->
     <section class="login_section transition hover_btn">
-      <a class="login_link transition log_link" href="/users/<%= locals.username %>/profile"><%= locals.username %></a>
+      <div class="flex">
+        <a class="" href="/users/<%= locals.username %>/profile"><img src="<%= locals.img %>" class="player_img" alt="player icon"></a>
+        <a class="login_link transition log_link" href="/users/<%= locals.username %>/profile"><%= locals.username %></a>
+      </div>
       <section class="drop_down_container transition hide">
         <a href="/" class="log_out log_link transition">Log out</a>
       </section>

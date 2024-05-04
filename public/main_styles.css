@@ -8,6 +8,20 @@ body {
   background: gainsboro;
 }
 
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.margin {
+  margin: 1rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
 .hide {
   display: none;
 }
@@ -53,24 +67,38 @@ body {
 
 .player_list {
   margin: 1em;
+  list-style: none;
 }
 .player_list > * {
   margin: 1em;
 }
 
+.player {
+  border-right: 1px solid rgb(197, 197, 197);
+  padding-right: 1em;
+}
+
+.role_icon {
+  margin: auto;
+}
+
 .guest {
   color: black;
   cursor: default;
+  margin-left: 1rem;
 }
 
 .login_section {
+  margin: 0;
   color: white;
-  margin: 1rem;
-  margin-top: 0;
   padding: 1em;
   position: fixed;
+  top: 0;
   left: 0;
   z-index: 1;
+  border-radius: 0;
+  height: 100%;
+  cursor: default;
 }
 .login_section:hover {
   color: white;
@@ -86,12 +114,19 @@ body {
   color: white;
 }
 
+.player_img {
+  background: white;
+  cursor: default;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
 .drop_down_container {
   margin: 1em;
-  margin-left: 0;
   margin-bottom: 0;
   padding: 1em;
-  padding-left: 0;
+  text-align: center;
 }
 
 .intro_container {
@@ -209,6 +244,12 @@ body {
 
 .s_t_ol {
   margin-bottom: 1em;
+}
+
+.li {
+  background-color: rgba(255, 255, 255, 0.077);
+  padding: 1rem;
+  font-size: 1.3rem;
 }
 
 .li_q {

@@ -10,32 +10,40 @@
   <body>
     <!-- User -->
     <section class="login_section transition hover_btn">
-      <p class="login_link transition user_profile"><%= locals.username %></p>
+      <div class="flex">
+        <img src="<%= locals.img %>" class="player_img" alt="player icon">
+        <p class="login_link transition user_profile"><%= locals.username %></p>
+      </div>
       <section class="drop_down_container transition hide">
         <a href="/" class="log_out log_link transition">Log out</a>
       </section>
     </section>
 
     <!-- image change dialog -->
+      <dialog class="change_picture dialog">
+        <img src="/res/media/close.png" alt="close dialog" class="close" />
+        <h3 class="tac">Change picture</h3>
+        <!-- user can copy and paste a image address -->
+        <div class="flex_div">
+          <label for="imgSrc">Image url</label>
+          <input name="imgSrc" type="text" class="img_src_input" value="<%= locals.img %>" />
+        </div>
 
-    <dialog class="change_picture dialog">
-      <img src="/res/media/close.png" alt="close dialog" class="close" />
-      <h3 class="tac">Change picture</h3>
-      <!-- user can copy and paste a image address -->
-      <div class="flex_div">
-        <label for="img_src">Image url</label>
-        <input type="text" class="img_src_input">
-      </div>
-
-      <!-- user can upload content -->
-      <div class="flex_div">
-        <label for="file_upload">Upload an image</label>
-        <input type="file" name="file_upload" id="file" class="file_upload" accept="image/png, image/gif, image/jpeg">
-      </div>
-      <div class="btn_div">
-        <button class="change_img_btn btn">Change</button>
-      </div>
-    </dialog>
+        <!-- user can upload content -->
+        <div class="flex_div">
+          <label for="file_upload">Upload an image</label>
+          <input
+            type="file"
+            name="file_upload"
+            id="file"
+            class="file_upload"
+            accept="image/png, image/gif, image/jpeg"
+          />
+        </div>
+        <div class="btn_div">
+          <button class="change_img_btn btn">Change</button>
+        </div>
+      </dialog>
 
     <section class="profile">
       <h1 class="profile_header">Profile</h1>
@@ -43,24 +51,30 @@
         <div class="user_div">
           <li class="username_li li">
             <img
-              src=""
+              src="<%= locals.img %>"
               alt="avatar image"
               class="profile_pic"
             />
             <p class="username"><%= locals.username %></p>
           </li>
           <!-- <button class="button_style img_btn">Upload/Change image</button> -->
-          <p class="margin">Status:</p>
+          <p class="margin status_label">Status:</p>
           <textarea
             class="status"
             cols="50"
             rows="2"
             placeholder="150 char max"
             maxlength="150"
-          ></textarea>
+            value="<%= locals.userStatus %>"
+          ><%= locals.userStatus %></textarea>
         </div>
         <li class="wins li">Wins:</li>
         <li class="loss li">Losses:</li>
+        <form method="post" class="tac btn_div">
+          <button class="btn change_img_btn save">Save</button>
+          <input name="imgSrc" type="text" class="img_src_inp" hidden/>
+          <input name="profileStatus" type="text" class="status_inp" hidden/>
+        </form>
       </ul>
     </section>
     <div class="play_div">

@@ -23,6 +23,7 @@ const score = document.querySelector(".points")
 const endMessage = document.querySelector(".end_message")
 const endDialog = document.querySelector(".end_dialog")
 const closeDialog = document.querySelector(".close")
+const playerImg = document.querySelector(".player_img")
 var clickCount = 0
 var currentQCount = 1
 var playerPoints = 0
@@ -65,13 +66,33 @@ function createLobby (player) {
 
 function addPlayerToLobbyList(listOfPlayers, player) {
     let li = document.createElement("li")
-    li.classList.add("li")
-    li.classList.add("player")
+    li.classList.add("li", "li_player")
     li.id = playerId
-    li.innerText = player
-    listOfPlayers.append(li)
 
+    let p = document.createElement("p")
+    p.classList.add("margin", "player")
+    p.innerText = player
+
+    let img = document.createElement("img")
+    img.src = playerImg.src
+    img.classList.add("player_img")
+    
+    let flexDiv = document.createElement("div")
+    flexDiv.classList.add("flex")
+
+    let roleIcon = document.createElement("img")
+    roleIcon.classList.add("role_icon", "icon")
+    listOfPlayers.append(li)
+    li.append(flexDiv)
+    flexDiv.append(img, p)
+    if(playerId == 1) {
+        roleIcon.src = "/res/media/crown.png"
+    } else {
+        roleIcon.src = "/res/media/player_lobby.png"
+    }
+    flexDiv.append(roleIcon)
     playerId++
+    
 }
 
 btnAdd.addEventListener('click', getInpValue)
@@ -266,8 +287,6 @@ function displayQA() {
     removeTrackList(trackListArr)
 
     for (let i=0;i<objList.length;i++) {
-        //TODO: display one question at a time instead of a list.
-
         let div = document.createElement("div")
         div.classList.add("divider") //to select all for reset
         div.classList.add("transition")

@@ -34,17 +34,24 @@ $background: rgb(63, 90, 95);
 
 .username_li {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    margin-bottom: 0 !important;
 
     & > * {
         margin: 1em;
+        margin-bottom: 0;
     }
 }
 
 .margin {
     margin: 1rem;
+}
+
+.status_label {
+    margin-top: 0;
 }
 
 .status {
@@ -87,8 +94,8 @@ $background: rgb(63, 90, 95);
 }
 
 .profile_pic {
-    width: 100px;
-    height: 100px;
+    max-width: 300px;
+    max-height: 300px;
     object-fit: contain;
     cursor: pointer;
 
@@ -151,6 +158,10 @@ $background: rgb(63, 90, 95);
     float:right;
     margin: 1rem;
     cursor: pointer;
+
+    &:hover{ 
+        opacity: .5;
+    }
 }
 
 .btn_div {
