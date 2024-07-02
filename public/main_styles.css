@@ -8,6 +8,10 @@ body {
   background: gainsboro;
 }
 
+.intro_title {
+  margin: 1em;
+}
+
 .icon {
   width: 50px;
   height: 50px;
@@ -97,11 +101,14 @@ body {
   left: 0;
   z-index: 1;
   border-radius: 0;
-  height: 100%;
   cursor: default;
 }
 .login_section:hover {
   color: white;
+}
+
+.vh100 {
+  height: 100%;
 }
 
 .log_link {
@@ -199,8 +206,8 @@ body {
   position: absolute;
   left: 0;
   width: 27vw;
-  margin: 1em;
-  height: 300px;
+  margin: 0 1em;
+  height: 70%;
   overflow-y: scroll;
   padding: 1rem;
   background: rgb(63, 90, 95);
@@ -242,8 +249,15 @@ body {
   text-decoration: underline;
 }
 
+.side_div {
+  background: rgba(255, 255, 255, 0.159);
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
 .s_t_ol {
   margin-bottom: 1em;
+  list-style-type: none;
 }
 
 .li {
@@ -260,6 +274,24 @@ body {
 .li_a {
   margin: 1em;
   transition: 350ms ease-in-out;
+  padding: 0.5em;
+}
+.li_a:hover {
+  background: rgb(87, 87, 87);
+}
+
+.menuOptions {
+  list-style-type: none;
+}
+
+.menu_li {
+  padding: 0.5rem;
+  background-color: rgb(12, 77, 97);
+  color: white;
+  cursor: pointer;
+}
+.menu_li:hover {
+  background: rgba(0, 0, 0, 0.495);
 }
 
 .form {
@@ -333,6 +365,10 @@ input {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 2rem;
+}
+
+.one_row {
+  grid-template-rows: 1fr;
 }
 
 .a_top_page {
